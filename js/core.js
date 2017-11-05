@@ -41,7 +41,7 @@ if (wsUri.indexOf("ws://") == 0 || wsUri.indexOf("wss://") == 0) {
 }
 
 
-	wsUri="ws://act.s1.natapp.cc"
+//	wsUri="ws://act.s1.natapp.cc"
 
 class ActWebsocketInterface {
     constructor(uri, path = "MiniParse") {
