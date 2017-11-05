@@ -18,7 +18,7 @@ var QueryString = function () {
 }();
 
 var host_port = QueryString.HOST_PORT;
-if (host_port.length>0){
+
 while (host_port.endsWith('/')) {
     host_port = host_port.substring(0, host_port.length - 1)
 }
@@ -39,9 +39,9 @@ if (wsUri.indexOf("ws://") == 0 || wsUri.indexOf("wss://") == 0) {
         wsUri = "ws://" + wsUri.replace(/@HOST_PORT@/im, host_port)
     }
 }
-}
-else
-	wsUri="ws://act.s1.natapp.cc";
+
+
+	wsUri="ws://act.s1.natapp.cc"
 
 class ActWebsocketInterface {
     constructor(uri, path = "MiniParse") {
