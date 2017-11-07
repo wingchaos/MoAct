@@ -143,6 +143,22 @@ p{
     vertical-align: middle;
     font-family: 'Montserrat'
 }
+.CuZone {
+    padding: 0;
+    line-height: 0;
+	color :gold;
+	font-family: 'Montserrat'
+}
+.bigText2 {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin-top: .2rem
+}
+.smallText2 {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    padding-top: .2rem
+}
 .info {
     padding: 0;
     line-height: 0;
