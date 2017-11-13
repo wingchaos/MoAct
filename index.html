@@ -21,9 +21,7 @@ document.write(layer.type+"<br>");
 	<!-- height: 100%; -->
 	<!-- background-color: transparent; -->
 	<!-- overflow: hidden; -->
-
 <style>
-
 * {
 	font-family: "微软雅黑";
 	font-weight:bold;
@@ -31,13 +29,10 @@ document.write(layer.type+"<br>");
 	color: white;
 	text-shadow: -1px 0 #000000,0 1px #000000,1px 0 #000000,0 -1px #000000;
 }
-
 body, html {
 	margin: 0;
 	
-
 }
-
 html {
 	background-image: url('images/handle.png');
 	background-position: bottom right;
@@ -47,7 +42,6 @@ html {
 	background-color: transparent;
 	overflow: hidden;
 }
-
 .td11{ 
 position: absolute;
 opacity: 0;
@@ -63,18 +57,13 @@ right:0px;
 top:0px;
 width:100%;
 height:35px;
-
 }
 td;
-
-
 #totcov,#totcov2{transition:.5s;}
 #totcov, #totcov2{position:absolute; left:0px; top:0px; bottom:0px; right:0px; padding:5px;}
 #encounter {
-
     background: rgba(124,252,0,0.3);
 	text-shadow: unset;
-
     padding: 1px;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -82,7 +71,6 @@ td;
 	top:1px;
 	display: flex;
 }
-
 #time1{
 	left: 35%;
 	top: 14px;
@@ -112,17 +100,14 @@ td;
 	position: absolute;
 	top: -8px;
 	right:50px;;
-
 	font-size: 18pt;
 }
-
 #encounter table {
 	border: none;
 	width: 100%;
 	table-layout : fixed;
 	
 }
-
 .combBox {
 	position: absolute;
 	width: 100%;
@@ -132,9 +117,6 @@ td;
     padding: 1px;
     border-radius: 5px;
 }
-
-
-
 .combBox > .playerName {
 	color:	#EEEE00;
 	white-space: nowrap;
@@ -151,7 +133,6 @@ td;
 	vertical-align: bottom;
 	font-size: 10pt;
 }
-
 .combBox > .max {
 	color: SkyBlue;
 	position: absolute;
@@ -184,7 +165,6 @@ td;
 	left: -10px;
 	top: -80px;
 }
-
 .combBox  img { 
 	position: relative;
 	top: 5px;
@@ -193,7 +173,6 @@ td;
 	padding: 0px;
 	float: left;
 }
-
 #flash1 {
 	position: fixed;
 	width: 100px;
@@ -212,7 +191,6 @@ td;
 	opacity:0;
 	
 }
-
 #flash3{
     background: rgba(0,0,0,0.5);
 	text-shadow: unset;
@@ -227,7 +205,6 @@ zooom{
 	zoom:100%;
 }
 </style>
-
 <script>
 		if(!onACTWebSocket)
 		{
@@ -255,7 +232,6 @@ zooom{
 	var flashPos;
 	var maxHit = 0;
 		
-
 		//
 		// プラグイン側から以下のような ActXiv オブジェクトとしてデータが提供される
 		//
@@ -273,12 +249,9 @@ zooom{
 		// プラグインから onOverlayDataUpdate イベントが発行されるので、それを受信することもできる
 		// イベントハンドラの第一引数の detail プロパティ内に上記のオブジェクトが入る
 		//
-
 		//
 		// 表示設定 (2)
 		//
-
-
 		//
 		// 以下表示用スクリプト
 		//
@@ -286,7 +259,6 @@ zooom{
 		document.addEventListener("onOverlayDataUpdate", function (e) {
 			update(e.detail);
 		});
-
 		var ranking = new Array(); // TODO give this var a better name
 		var prevRank;
 		
@@ -321,7 +293,6 @@ zooom{
   {
   try{
       var isfullscreen = isFullscreen();
-
       if (!isfullscreen) {
         resize_contents();
              console.log('not fullscreen');
@@ -476,7 +447,6 @@ zooom{
 			//dataset.push(data); // for debug etc
 			
 		}
-
 		var t = 0;
 		
 		
@@ -489,7 +459,6 @@ zooom{
 			while(combDiv.firstChild) {
 				combDiv.removeChild(combDiv.firstChild);
 			}
-
 			var myRank = -1;
 			for(i = 0; i < ranking.length; i++) {
 				if(ranking[i].name == "YOU") {
@@ -561,7 +530,6 @@ zooom{
 				
 				// fancy printing of max hit
 				
-
 				if (ranking[i].max > 0) { 
 					if (ranking[i].max == maxHit) {
 						box.innerHTML += "<div class='max' style='color:gold'>" +ranking[i].maxn+ "</div><br>"+"<div class='max1' style='color:gold'>" +ranking[i].dmg+ "</div><br>";
@@ -574,7 +542,6 @@ zooom{
 				if(parseInt(ranking[i].death)>0){
 					box.innerHTML +=	"<div class='max2'>" + ranking[i].death +"亡&nbsp;";		
 				}
-
 				
 				// COLOR SETTING
 				var tank   = ["Gld", "Gla", "Pld", "Mrd", "War", "Drk"];
@@ -642,11 +609,9 @@ zooom{
 			}
 			
 		}
-
 		// Miniparse フォーマット文字列を解析し、表示文字列を取得する
 		function parseActFormat(str, dictionary) {
 			var result = "";
-
 			var currentIndex = 0;
 			do {
 				var openBraceIndex = str.indexOf('{', currentIndex);
@@ -673,7 +638,6 @@ zooom{
 					}
 				}
 			} while (currentIndex < str.length);
-
 			return result;
 		}
 		
@@ -692,8 +656,6 @@ zooom{
 			}
 		}
 	//	var wsUri = "ws://@HOST_PORT@/MiniParse";
-
-
 		function updateTest() {
 			update(dataset[0]);
 			dataset.push(dataset.shift());
@@ -723,7 +685,6 @@ zooom{
 								else{
 								div2.style.display="block";}
 								 
-
 						}
 						
 				$(document).ready(function(){
@@ -756,16 +717,13 @@ zooom{
 <div id="zooom" >
 <button class="td2" >Show</button> 
 <button class="td11" >Hide</button> 
-
 <!-- <button class="td11" id="btn1">Show</button>  -->
 <div id="container">
 	
-
 		<div id="flash1" ></div>
 		
 		<!-- <div id="flash2"  onclick="test2(this);" ></div> -->
 <div id="flash2"  ></div>
-
 		<div id="encounter"  >
 			<div id=timezone>
 				<DIV  id="date1" > 
@@ -779,10 +737,8 @@ zooom{
 				请开始你的表演。<br>
 				ヾ(@^▽^@)ノ　
 			</div>
-
 		
 		</div>
-
 		
 		
 <div id="dvi2" style='display:block'>
@@ -794,6 +750,5 @@ zooom{
 	
 </div>
 </div>
-
 </body>
 </html>
