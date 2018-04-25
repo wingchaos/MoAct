@@ -55,6 +55,9 @@ p{
     position: fixed;
     z-index: 0
 }
+.chuantou{    
+   pointer-events: none;
+}
 .move{    
     cursor: move;
     -webkit-app-region: drag;
