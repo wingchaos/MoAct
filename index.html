@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="zh">
 
 <head>
-    
-    <link href="//fonts.lug.ustc.edu.cn/icon?family=Material+Icons" rel="stylesheet">
-    <link href="//fonts.lug.ustc.edu.cn/css?family=Roboto:400,700|Montserrat:500|Roboto+Condensed" rel="stylesheet">
-    <script src="//code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-    <script src="//ajax.lug.ustc.edu.cn/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link href="//mopi.wchaos.xyz/css/icon.css" rel="stylesheet">
+    <link href="//mopi.wchaos.xyz/css/css.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="//mopi.wchaos.xyz/js/jquery-ui.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="css/mopimopi.css" />
     <script type="text/javascript" src="js/jscolor.js"></script>
@@ -23,7 +22,8 @@
     <link rel="shortcut icon" href="images/menu/icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="images/menu/icon.png">
-    <title>MopiMopi-波波汉化</title>
+    <title>MopiMopi-波波搬运</title>
+
     <body>
         <div id="zone">
             <!-- Main Menu -->
@@ -67,8 +67,12 @@
                 <li id="en" onclick="radioButtonCotrol(this.id)">
                     <input type="radio" class="with-gap" name="radio_lang" id="lb-en" />
                     <label for="lb-en" class="rdColor"><font style="color:#fff">English</font></label>
+                </li>                
+                <li id="de" onclick="radioButtonCotrol(this.id)">
+                    <input type="radio" class="with-gap" name="radio_lang" id="lb-de" />
+                    <label for="lb-de" class="rdColor"><font style="color:#fff">Deutsch</font></label>
                 </li>
-            </ul>
+            </ul>                           
             <!-- Name Type -->
             <ul id="dropdown7" class="dropdown-content grey darken-3">
                 <ul class="white-text">
@@ -118,10 +122,10 @@
                             <tr>
                                 <td class="time">00:00</td>
 								<td class="CuZone">
-								    <div class="bigText2">社会你波哥</div><br>
+								    <div class="bigText2" id="date1">社会你波哥</div><br>
                                     
-									<DIV  class="smallText2" id="jnkc" style="font-size: 13px;"> 
-									<SCRIPT> setInterval("jnkc.innerHTML=new Date().toLocaleTimeString();",1000); 
+									<DIV  class="smallText2" id="time1" style="font-size: 13px;"> 
+									<SCRIPT> time1.innerHTML=new Date().toLocaleTimeString(); 
 									</SCRIPT> </DIV>
 								</td>
                                 <td class="info">
@@ -145,12 +149,12 @@
                             <div class="headerbg">
                                 <table id="historyHeader" class="tableHeader">
                                     <tr>
-                                        <td class="viewCell">当前</td>
-										<td class="nameCell">名字</td>
-                                        <td class="narrowCell1">时间</td>
-                                        <td class="narrowCell2">团秒伤害</td>
-                                        <td class="narrowCell2">团秒治疗</td>
-                                        <td class="narrowCell1">计数</td>
+                                        <td class="viewCell">View</td>
+                                        <td class="nameCell">Name</td>
+                                        <td class="narrowCell1">Time</td>
+                                        <td class="narrowCell2">RDPS</td>
+                                        <td class="narrowCell2">RHPS</td>
+                                        <td class="narrowCell1">Count</td>
                                     </tr>
                                 </table>
                             </div>
@@ -340,16 +344,17 @@
                     </div>
                 </nav>
             </div>
-            <!-- Notice 公告-->
- 		<div name="notice" style="display: none">
-                	<div class="col s12 card-panel">
-                   	 <span class="new badge purple">Tip</span>
-                    	<p class="grey1-text" lang="kr">
+            <!-- Notice -->
+            <div name="notice" style="display: none">
+                <div class="col s12 card-panel">
+                    <span class="new badge purple">Tip</span>
+                    <p class="grey1-text" lang="kr">
+            		
                         1. 有任何疑问欢迎加我QQ<span class="amber-text"><a href="tencent://message/?uin=540459901&Site=&Menu=yes" target="_blank">540459901</a></span>讨论，共同进步.<br> 
+                        2.更新版本，现在可以使用原版的ACT解析DLL，达到合并召唤兽数据，显示中文最强伤害。
                     </p>
                 </div>
-
-                <span class="white-text right" id="verDate">1.1.8.7 - 2017/11/04</span>
+                <span class="white-text right" id="verDate">1.1.9.9 - 2018/04/25</span>
             </div>
             <!-- Main Contents -->
             <div name="main" id="wrap">
@@ -376,7 +381,6 @@
                 <ul id="dpsRaidTable" class="collapsible raid"></ul>
                 <ul id="hpsRaidTable" class="collapsible raid hidden"></ul>
             </div>
-
             <!-- Mobile Scroll Lock-->
             <div id="lock">
                 <!-- Top bar Design -->
@@ -426,7 +430,7 @@
                                     <td class="narrowCell2">DPS</td>
                                     <td class="narrowCell1">D%</td>
                                     <td class="wideCell1">总伤害</td>
-                                    <td class="wideCell2">最强伤害</td>
+                                    <td class="wideCell2">最强伤害/td>
                                     <td class="narrowCell1">挂了</td>
                                 </tr>
                             </table>
@@ -1203,7 +1207,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- All Settings -->
             <div name="settingsPage" class="contents hidden">
 
@@ -1362,25 +1365,25 @@
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">最近10s</span><br><span class="SecondaryText" name="m43"></span></div>
+                    <div class="col s10"><span class="PrimaryText">最近10</span><br><span class="SecondaryText" name="m43"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps8" onclick="starIcon('c-dps8')">
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">最近30s</span><br><span class="SecondaryText" name="m44"></span></div>
+                    <div class="col s10"><span class="PrimaryText">最近30</span><br><span class="SecondaryText" name="m44"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps9" onclick="starIcon('c-dps9')">
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">最近60s</span><br><span class="SecondaryText" name="m45"></span></div>
+                    <div class="col s10"><span class="PrimaryText">最近60</span><br><span class="SecondaryText" name="m45"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps10" onclick="starIcon('c-dps10')">
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">最近180s</span><br><span class="SecondaryText" name="m46"></span></div>
+                    <div class="col s10"><span class="PrimaryText">最近180</span><br><span class="SecondaryText" name="m46"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps11" onclick="starIcon('c-dps11')">
                     <div class="col s2"><input type="checkbox">
@@ -1404,13 +1407,13 @@
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">攻击数</span><br><span class="SecondaryText" name="m50"></span></div>
+                    <div class="col s10"><span class="PrimaryText">攻击次数</span><br><span class="SecondaryText" name="m50"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps15" onclick="starIcon('c-dps15')">
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">命中数</span><br><span class="SecondaryText" name="m51"></span></div>
+                    <div class="col s10"><span class="PrimaryText">命中次数</span><br><span class="SecondaryText" name="m51"></span></div>
                 </div>
 
                 <!-- 4.0 New Items -->
@@ -1464,7 +1467,7 @@
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">失败</span><br><span class="SecondaryText" name="m53"></span></div>
+                    <div class="col s10"><span class="PrimaryText">无效</span><br><span class="SecondaryText" name="m53"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps24" onclick="starIcon('c-dps24')">
                     <div class="col s2"><input type="checkbox">
@@ -1490,13 +1493,13 @@
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">招架%</span><br><span class="SecondaryText" name="m59"></span></div>
+                    <div class="col s10"><span class="PrimaryText">招架</span><br><span class="SecondaryText" name="m59"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps28" onclick="starIcon('c-dps28')">
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">格挡%</span><br><span class="SecondaryText" name="m60"></span></div>
+                    <div class="col s10"><span class="PrimaryText">格挡</span><br><span class="SecondaryText" name="m60"></span></div>
                 </div>
                 <li class="divider" style="background:rgba(255,255,255,0.12);"></li>
                 <div class="TitleText" name="m35"></div>
@@ -1534,13 +1537,13 @@
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">过疗量</span><br><span class="SecondaryText" name="m66"></span></div>
+                    <div class="col s10"><span class="PrimaryText">过疗</span><br><span class="SecondaryText" name="m66"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps35" onclick="starIcon('c-dps35')">
                     <div class="col s2"><input type="checkbox">
                         <div class="iconText"><i class="material-icons">star_border</i></div>
                     </div>
-                    <div class="col s10"><span class="PrimaryText">过疗率</span><br><span class="SecondaryText" name="m67"></span></div>
+                    <div class="col s10"><span class="PrimaryText">过疗%</span><br><span class="SecondaryText" name="m67"></span></div>
                 </div>
                 <div class="row tile waves-effect" name="c-dps36" onclick="starIcon('c-dps36')">
                     <div class="col s2"><input type="checkbox">
@@ -1762,6 +1765,23 @@
                         </div>
                     </div>
                 </div>
+            
+                <li class="divider" style="background:rgba(255,255,255,0.12);"></li>
+                <div class="TitleText">MaxHit / MaxHeal</div>
+                <div class="tile waves-effect row" id="align" onclick="buttonCotrol(this); onSettingsUpdate(this.id);">
+                    <div class="col s2">
+                        <div style="color:rgba(255,255,255,0.38)"><i class="material-icons">format_align_center</i></div>
+                    </div>
+                    <div class="col s8"><span class="PrimaryText" name="m269"></span><br><span class="SecondaryText" name="m270"></span></div>
+                    <div class="col s2">
+                        <div class="switch right">
+                            <label class="swColor">
+                        <input type="checkbox" id="align">
+                        <span class="lever"></span>
+                        </label>
+                        </div>
+                    </div>
+                </div>
                 <div class="tile waves-effect row" id="maxAbb" onclick="buttonCotrol(this)">
                     <div class="col s2">
                         <div style="color:rgba(255,255,255,0.38)"><i class="material-icons">content_cut</i></div>
@@ -1776,9 +1796,7 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="hidden" name="maxAbb">
-
                     <div class="tile waves-effect row" id="dataAbb" onclick="viewPage(this)">
                         <div class="col s2">
                             <div class="iconText"><i class="material-icons">comment</i></div>
@@ -1786,7 +1804,6 @@
                         <div class="col s10"><span class="PrimaryText" name="m261"></span><br><span class="SecondaryText" name="m262"></span></div>
                     </div>
                 </div>
-
 
                 <li class="divider" style="background:rgba(255,255,255,0.12);"></li>
                 <div class="TitleText" name="m225"></div>
@@ -2001,7 +2018,16 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="tile" style="cursor: default">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="input-field">
+                                <input id="deFont" placeholder="" type="text" name="deFont" autocomplete="off" autocapitalize="off" autocorrect="off">
+                                <label for="deFont" name="m105" class="active"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Cell Width -->
             <div name="cellWidth" class="contents hidden">
@@ -2026,7 +2052,7 @@
                             <span class="PrimaryText" name="m113"></span><br>
                             <span class="SecondaryText" name="m114"></span>
                         </td>
-                        <td class="quantity" style=" width:40%;  text-align: right;;">
+                        <td class="quantity" style=" width:40%;  text-align: right;">
                             <a field="narrowCell2" class="minus btn-floating waves-effect waves-light grey"><i class="material-icons">remove</i></a>
                             <input type="text" disabled value="" name="narrowCell2" />
                             <a field="narrowCell2" class="plus btn-floating waves-effect waves-light blue"><i class="material-icons">add</i></a>
@@ -2068,9 +2094,9 @@
                 <li class="divider" style="background:rgba(255,255,255,0.12);"></li>
 
                 <div class="TitleText" name="m110"></div>
-                <table class="tile" style="cursor: default">
+                <table class="tile" style="cursor: default;">
                     <tr>
-                        <td style=" width:100%; padding-left:0.75rem;">
+                        <td style="width:100%; padding-left:0.75rem;">
                             <span class="PrimaryText" name="m115"></span><br>
                             <span class="SecondaryText" name="m116"></span>
                         </td>
@@ -2116,6 +2142,12 @@
                         <div class="iconText"><i class="material-icons">person</i></div>
                     </div>
                     <div class="col s10"><span class="PrimaryText" name="m156"></span><br><span class="SecondaryText" name="m157"></span></div>
+                </div>
+                <div class="tile row" style="cursor: default">
+                    <div class="col s2">
+                        <div class="iconText"><i class="material-icons">person</i></div>
+                    </div>
+                    <div class="col s10"><span class="PrimaryText" name="m271"></span><br><span class="SecondaryText" name="m272"></span></div>
                 </div>
                 <li class="divider" style="background:rgba(255,255,255,0.12);"></li>
                 <div class="TitleText" name="m158"></div>
@@ -2169,10 +2201,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
-    <script type="text/javascript" src="js/core.js" crossorigin="anonymous" ></script>
-    <script type="text/javascript" src="js/mopimopi.js" crossorigin="anonymous" ></script>
+        <script type="text/javascript" src="js/core.js"></script>
+        <script type="text/javascript" src="js/mopimopi.js"></script>
     </body>
 
 </html>
