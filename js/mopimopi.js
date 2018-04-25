@@ -76,7 +76,7 @@ function autoHidden(flag){if(localStorage.getItem("autoHide")==0||OnlyUsers==0)
 return;else{if(flag=="OFF"){objTime=setTimeout(function(){if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){$('body').find('[name=raid]').addClass('hidden')}
 else{$('body').find('#graphTableBody, #graphTableHeader').addClass('hidden')}
 if($('body').find('[name=main]').hasClass("hidden")==!1&&localStorage.getItem("autoHide")==1){if(localStorage.getItem("toast")==1){if(localStorage.getItem('lang')=="kr")
-var $toastContent=$('<div class="row col s12 white-text center">< 자동 숨기기 ><br>데이터 테이블을 다시 보고 싶다면 오버레이를 클릭하세요!</div>');else if(localStorage.getItem('lang')=="en")
+var $toastContent=$('<div class="row col s12 white-text center">< 自动隐藏了 ><br>你可以再次点击Overlay再次显示!<br>可以在设置-其他设置-自动隐藏数据表调节</div>');else if(localStorage.getItem('lang')=="en")
 var $toastContent=$('<div class="row col s12 white-text center">< Auto-hide ><br>Do you want to view data table again? Just Click on the Overlay!</div>');else var $toastContent=$('<div class="row col s12 white-text center">< Auto-hide ><br>Do you want to view data table again? Just Click on the Overlay!</div>');Materialize.toast($toastContent,3000)}}},parseInt(localStorage.getItem('autoHideTime'))*60000)}
 else{if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){$('body').find('[name=raid]').removeClass('hidden')}
 else{$('body').find('#graphTableBody, #graphTableHeader').removeClass('hidden')}
