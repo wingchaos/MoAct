@@ -241,6 +241,7 @@ ul.dropdown-content div i {
     width: 100%;
     position: relative;
     overflow-x: hidden;
+    pointer-events:none;
     overflow-y: auto
 }
 .tableHeader,
