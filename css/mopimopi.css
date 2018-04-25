@@ -66,6 +66,22 @@ p{
     font-size: 1.6rem;
     padding-left: 6rem;
 }
+.CuZone {
+    padding: 0;
+    line-height: 0;
+	color :gold;
+	font-family: 'Montserrat'
+}
+.bigText2 {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin-top: .2rem
+}
+.smallText2 {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    padding-top: .2rem
+}
 #dataAbbWrap{
     width: 100%;
 }
