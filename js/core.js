@@ -472,7 +472,7 @@ function Person(e, p) {
         this.maxhitstr = forTest(this.maxhit.split('-')[0]);
         this.maxhitval = parseInt(this.maxhit.split('-')[1].replace(/\D/g, ""))
         if(this.maxhitstr == "Unknown" && this.Class == "MCH" && localStorage.getItem("lang") == "kr")     
-            this.maxhitstr = "급속 출력"
+            this.maxhitstr = "野火"
     } catch (ex) {
         this.maxhit = "?-0";
         this.maxhitstr = "";
