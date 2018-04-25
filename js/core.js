@@ -1,4 +1,3 @@
-
 var webs = null;
 var QueryString = function () {
     var query_string = {};
@@ -19,8 +18,6 @@ var QueryString = function () {
 }();
 
 var host_port = QueryString.HOST_PORT;
-if (host_port==undefined)
-    host_port="act.s1.natapp.cc"
 while (host_port.endsWith('/')) {
     host_port = host_port.substring(0, host_port.length - 1)
 }
@@ -369,22 +366,6 @@ function Person(e, p) {
                 this[i] = parseInt(tmp).nanFix()
         }
     }
-    try {
-        this.maxhitstr = this.maxhit.split('-')[0];
-        this.maxhitval = parseInt(this.maxhit.split('-')[1].replace(/\D/g, ""))
-    } catch (ex) {
-        this.maxhit = "?-0";
-        this.maxhitstr = "";
-        this.maxhitval = 0
-    }
-    try {
-        this.maxhealstr = this.maxheal.split('-')[0];
-        this.maxhealval = parseInt(this.maxheal.split('-')[1].replace(/\D/g, ""))
-    } catch (ex) {
-        this.maxheal = "?-0";
-        this.maxhealstr = "";
-        this.maxhealval = 0
-    }
     if (this.DURATION <= 0) {
         this.dps = parseFloat((this.damage / this.parent.DURATION).nanFix().toFixed(underDot));
         this.hps = parseFloat((this.healed / this.parent.DURATION).nanFix().toFixed(underDot));
@@ -463,20 +444,20 @@ function Person(e, p) {
         }
     }
     if (this.Class == "") {
-        if (this.name.indexOf("宝石兽") > -1 || this.name.indexOf("之灵") > -1 || this.name.toUpperCase().indexOf("EGI") > -1 || this.name.toUpperCase().indexOf("CARBUNCLE") > -1 || this.name.indexOf("エギ") > -1 || this.name.indexOf("カーバンクル") > -1) {
+        if (this.name.indexOf("之灵") > -1 ||this.name.indexOf("에기") > -1 || this.name.indexOf("카벙클") > -1 || this.name.indexOf("데미바하무트") > -1 || this.name.toUpperCase().indexOf("EGI") > -1 || this.name.toUpperCase().indexOf("DEMI-BAHAMUT") > -1 || this.name.toUpperCase().indexOf("CARBUNCLE") > -1 || this.name.indexOf("Karfunkel") > -1 || this.name.indexOf("エギ") > -1 || this.name.indexOf("カーバンクル") > -1 || this.name.indexOf("石兽") > -1 || this.name.indexOf("亚灵神巴哈姆特") > -1) {
             this.Job = "AVA";
             this.Class = "SMN";
             this.isPet = true;
             this.petType = "Egi"
         }
-        if (this.name.indexOf("小仙女") > -1 || this.name.toUpperCase().indexOf("EOS") > -1 || this.name.toUpperCase().indexOf("SELENE") > -1 || this.name.indexOf("フェアリー") > -1) {
+        if (this.name.indexOf("요정") > -1 || this.name.toUpperCase().indexOf("EOS") > -1 || this.name.toUpperCase().indexOf("SELENE") > -1 || this.name.indexOf("フェアリー") > -1 || this.name.indexOf("小仙女") > -1) {
             this.Job = "AVA";
             this.Class = "SCH";
             this.isPet = true;
             this.role = "Healer";
             this.petType = "Fairy"
         }
-        if (this.name.indexOf("式浮空炮塔") > -1 || this.name.toUpperCase().indexOf("AUTOTURRET") > -1 || this.name.indexOf("オートタレット") > -1) {
+        if (this.name.indexOf("자동포탑") > -1 || this.name.toUpperCase().indexOf("AUTOTURRET") > -1 || this.name.indexOf("オートタレット") > -1 || this.name.indexOf("Selbstschuss-Gyrocopter") > -1 || this.name.toLowerCase().indexOf("auto-tourelle") > -1 || this.name.indexOf("式浮空炮塔") > -1) {
             this.Job = "AVA";
             this.Class = "MCH";
             this.isPet = true;
@@ -486,6 +467,24 @@ function Person(e, p) {
             this.Job = "LMB";
             this.Class = "LMB"
         }
+    }
+    try {
+        this.maxhitstr = this.maxhit.split('-')[0];
+        this.maxhitval = parseInt(this.maxhit.split('-')[1].replace(/\D/g, ""))
+        if(this.maxhitstr == "Unknown" && this.Class == "MCH" && localStorage.getItem("lang") == "kr")     
+            this.maxhitstr = "급속 출력"
+    } catch (ex) {
+        this.maxhit = "?-0";
+        this.maxhitstr = "";
+        this.maxhitval = 0
+    }
+    try {
+        this.maxhealstr = this.maxheal.split('-')[0];
+        this.maxhealval = parseInt(this.maxheal.split('-')[1].replace(/\D/g, ""))
+    } catch (ex) {
+        this.maxheal = "?-0";
+        this.maxhealstr = "";
+        this.maxhealval = 0
     }
     this.visible = !0;
     this.original = {
@@ -987,33 +986,33 @@ function Language(l) {
         "CHOCOBO": "CHOCOBO",
     };
     this.ko = {
-        "PLD": "骑士",
-        "GLD": "剑术师",
-        "WAR": "战士",
-        "MRD": "斧术师",
-        "DRK": "暗黑骑士",
-        "MNK": "武僧",
-        "PGL": "格斗家",
-        "DRG": "龙骑士",
-        "LNC": "枪术师",
-        "NIN": "忍者",
-        "ROG": "双剑师",
-        "BRD": "吟游诗人",
-        "ARC": "弓箭手",
-        "MCH": "机工士",
-        "SMN": "召唤师",
-        "THM": "咒术师",
-        "BLM": "黑魔法师",
-        "WHM": "白魔法师",
-        "CNJ": "幻术师",
-        "SCH": "学者",
-        "ACN": "秘术师",
-        "AST": "占星术士",
-        "LMB": "极限技",
-        "FAIRY": "小仙女",
-        "AUTOTURRET": "浮空炮塔",
-        "EGI": "召唤兽",
-        "CHOCOBO": "陆行鸟",
+        "PLD": "나이트",
+        "GLD": "검술사",
+        "WAR": "전사",
+        "MRD": "도끼술사",
+        "DRK": "암흑기사",
+        "MNK": "몽크",
+        "PGL": "격투사",
+        "DRG": "용기사",
+        "LNC": "창술사",
+        "NIN": "닌자",
+        "ROG": "쌍검사",
+        "BRD": "음유시인",
+        "ARC": "궁술사",
+        "MCH": "기공사",
+        "SMN": "소환사",
+        "THM": "주술사",
+        "BLM": "흑마도사",
+        "WHM": "백마도사",
+        "CNJ": "환술사",
+        "SCH": "학자",
+        "ACN": "비술사",
+        "AST": "점성술사",
+        "LMB": "리미트",
+        "FAIRY": "요정",
+        "AUTOTURRET": "자동포탑",
+        "EGI": "에기",
+        "CHOCOBO": "초코보",
     }
 }
 Language.prototype.get = function (v) {
