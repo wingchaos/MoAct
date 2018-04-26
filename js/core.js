@@ -593,7 +593,7 @@ Person.prototype.recalculate = function () {
     this["DirectHit%"] = pFloat(this.mergedDirectHitCount / this.mergedHits * 100);
     this["CritDirectHit%"] = pFloat(this.mergedCritDirectHitCount / this.mergedHits * 100);
     this["critheal%"] = pFloat(this.mergedCritHeals / this.mergedheals * 100);
-    this.tohit = pFloat(this.mergedHits / this.mergedSwings * 100)
+    this.tohit = this["DAMAGE-k"]
 };
 Person.prototype.getColor = function (r, g, b) {
     if (jobColors[this.Class] != undefined) {
