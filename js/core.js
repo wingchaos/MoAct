@@ -356,7 +356,8 @@ function toWan(num){
             str=num;
          }
         else{
-         str= (parseInt(num))/10000+"万";
+      //   str= (parseInt(num))/10000+"万";
+      str= ((parseInt(num))/10000).toFixed(1)+"万";
         }
     }
         return str;
