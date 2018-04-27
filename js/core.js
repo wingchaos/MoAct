@@ -593,7 +593,7 @@ Person.prototype.recalculate = function () {
   //  this["damage"]=this["DAMAGE-k"];
     
    // this["DAMAGE-k"] =toWan(this.mergedDamage);测试2
-   this["DAMAGE-k"] =this.mergedDamage;
+    this["DAMAGE-k"] =Math.floor(this.mergedDamage / 1000000);
     this["DAMAGE-m"] = Math.floor(this.mergedDamage / 1000000);
     this.DPS = Math.floor(this.dps);
     this["DPS-k"] = Math.floor(this.dps / 1000);
