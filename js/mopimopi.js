@@ -232,6 +232,20 @@ return'narrowCell2'+' '+name;else if(name=='c-dps12'||name=='c-dps25'||name=='c-
 return'wideCell1'+' '+name;else if(name=='c-dps24'||name=='c-dps39'||name=='c-hps13')
 return'wideCell2'+' '+name;else if(name=='c-dps1'||name=='c-hps1')
 return'iconCell'+' '+name;else return'narrowCell1'+' '+name}
+function toWana(num){
+    var str;
+    if(!isNaN(num))
+    {
+        if(parseInt(num)<10000){
+            str=num;
+         }
+        else{
+      //   str= (parseInt(num))/10000+"万";
+      str= ((parseInt(num))/10000).toFixed(1)+"万";
+        }
+    }
+        return str;
+}
 function addComma(num){if(isNaN(num))
 return 0;else{if(localStorage.getItem('dot')==1){num=num.toString().replace(/[.]/g,',')}
 if(localStorage.getItem('comma')==1){if(localStorage.getItem('dot')==1)
