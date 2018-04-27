@@ -347,6 +347,18 @@ function onBroadcastMessage(e) {
     }
 }
 
+//自动进万
+function toWan(num){
+    var str;
+    if(parseInt(num)<10000){
+        str=num;
+    }
+    else{
+     str= ( parseInt(num))/10000;
+    }
+    return str;
+}
+
 function Person(e, p) {
     this.parent = p;
     this.Class = "";
