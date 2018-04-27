@@ -350,13 +350,16 @@ function onBroadcastMessage(e) {
 //自动进万
 function toWan(num){
     var str;
-    if(parseInt(num)<10000){
-        str=num;
+    if(!isNaN(num))
+    {
+        if(parseInt(num)<10000){
+            str=num;
+         }
+        else{
+         str= (parseInt(num))/10000+"万";
+        }
     }
-    else{
-     str= (parseInt(num))/10000+"万";
-    }
-    return str;
+        return str;
 }
 
 function Person(e, p) {
@@ -593,7 +596,7 @@ Person.prototype.recalculate = function () {
   //  this["damage"]=this["DAMAGE-k"];
     
    // this["DAMAGE-k"] =toWan(this.mergedDamage);测试2
-    this["DAMAGE-k"] =Math.floor(this.mergedDamage / 1000000);
+    this["DAMAGE-k"] =Math.floor(this.mergedDamage / 10000);
     this["DAMAGE-m"] = Math.floor(this.mergedDamage / 1000000);
     this.DPS = Math.floor(this.dps);
     this["DPS-k"] = Math.floor(this.dps / 1000);
