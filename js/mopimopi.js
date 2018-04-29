@@ -105,13 +105,14 @@ $('.rdColor').css('color',accentColor);break;case 'toast':case 'align':case 'myI
 //这里
 case 'capture':
     if(isShow==true){
-     $("#yincang").hide();
-     $(".navbar-fixed").animate({opacity:0.3});
+     $("#yincang").hide(2500);
+     $(".navbar-fixed").style.opacity=0.3;
+    
      isShow=false;
     }
     else{
-        $("#yincang").show();
-        $(".navbar-fixed").animate({opacity:1});
+        $("#yincang").show(2500);
+        $(".navbar-fixed").style.opacity=1;
         isShow=true;
     }
         
