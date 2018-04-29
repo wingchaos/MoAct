@@ -104,7 +104,7 @@ function buttonCotrol(obj){var check=null;switch(obj.id){case 'tooltip':case 'li
 $('.rdColor').css('color',accentColor);break;case 'toast':case 'align':case 'myID':case 'raidMode':case 'border':case 'edge':case 'meBold':case 'otherBold':case 'comma':changeCheckIcon(obj);break;case 'arrow':check=changeCheckIcon(obj);arrowHidden(localStorage.getItem("arrow"));break;case 'autoHide':changeCheckIcon(obj);initCheck(obj.id);break;
 //这里
 case 'capture':
-  //  $(".td11").hide();
+     $("#yincang").hide();
 /*    $('#capture i').removeClass('flash animated').addClass('flash animated').one('animationend',function(){$(this).removeClass('flash animated')});if(localStorage.getItem("tooltip")==1)
 $('.tooltipped').tooltip('remove');$('body').find('.dropdown-button').dropdown('close');setTimeout(function(){webs.overlayAPI("Capture")},2000);if(localStorage.getItem("toast")==1){setTimeout(function(){var $toastContent=$('<div class="row col s12 white-text center">< Image Path ><br>Advanced Combat Tracker or ACTv3\\ScreenShot</div>');Materialize.toast($toastContent,3000)},3000)}
 if(localStorage.getItem("tooltip")==1)
