@@ -106,13 +106,13 @@ $('.rdColor').css('color',accentColor);break;case 'toast':case 'align':case 'myI
 case 'capture':
     if(isShow==true){
      $("#yincang").hide(2500);
-     $(".navbar-fixed").style.opacity=0.3;
+     $("#zone").style.opacity=0.3;
     
      isShow=false;
     }
     else{
         $("#yincang").show(2500);
-        $(".navbar-fixed").style.opacity=1;
+        $("#zone").style.opacity=1;
         isShow=true;
     }
         
