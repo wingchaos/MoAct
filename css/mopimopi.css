@@ -159,15 +159,15 @@ p{
     display: none;
 }
 .time {
-    font-size: 3rem;
-    padding: 0 0.7rem;
+    font-size: 2rem;
+    padding: 0;
     text-align: left;
     vertical-align: middle;
     font-family: 'Montserrat'
 }
 .CuZone {
-    font-size: 3rem;
-    padding: 0 1rem;
+    font-size: 2rem;
+    padding: 0;
     text-align: left;
     vertical-align: middle;
     font-family: 'Montserrat'
