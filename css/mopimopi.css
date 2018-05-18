@@ -192,7 +192,7 @@ td.topbarText{
 }
 ul.right{
     position: relative;
-    right:10%;
+    right:-15px;
     z-index: 1;
 }
 
