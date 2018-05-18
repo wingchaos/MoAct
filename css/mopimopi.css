@@ -193,7 +193,7 @@ td.topbarText{
 ul.right,
 ul.left{
     position: relative;
-    z-index: 1
+    z-index: -1
 }
 ul.dropdown-content div {
     padding: 0 1.6rem;
