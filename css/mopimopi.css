@@ -160,8 +160,8 @@ p{
 }
 .time {
     font-size: 3rem;
-    padding: 0 1rem;
-    text-align: center;
+    padding: 0 0.7rem;
+    text-align: left;
     vertical-align: middle;
     font-family: 'Montserrat'
 }
