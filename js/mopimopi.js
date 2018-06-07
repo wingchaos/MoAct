@@ -104,6 +104,16 @@ function buttonCotrol(obj){var check=null;switch(obj.id){case 'tooltip':case 'li
 $('.rdColor').css('color',accentColor);break;case 'toast':case 'align':case 'myID':case 'raidMode':case 'border':case 'edge':case 'meBold':case 'otherBold':case 'comma':changeCheckIcon(obj);break;case 'arrow':check=changeCheckIcon(obj);arrowHidden(localStorage.getItem("arrow"));break;case 'autoHide':changeCheckIcon(obj);initCheck(obj.id);break;
 //这里
 case 'showtime':
+     if(isShow==true){
+     $("#CuZone").hide(2500);
+     isShow=false;
+    }
+    else{
+        $("#CuZone").show(2500);
+        isShow=true;
+    }
+    
+  break;  
 case 'capture':
     var el=document.getElementById("zone");
 
