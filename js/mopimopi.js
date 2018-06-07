@@ -103,6 +103,7 @@ function viewPage(obj){switch(obj.id){case 'settings':$(document).scrollTop(0);v
 function buttonCotrol(obj){var check=null;switch(obj.id){case 'tooltip':case 'line':case 'gradation':case 'petAction':case 'ranking':case 'youColor':case 'maxAbb':changeCheckIcon(obj);initCheck(obj.id);break;case 'dot':check=changeCheckIcon(obj);if(check==1){$('[name=m85]').html('<font class="rdColor">ON </font>1.234<font class="rdColor">　OFF </font>1234')}else{$('[name=m85]').html('<font class="rdColor">ON </font>1,234<font class="rdColor">　OFF </font>1234')}
 $('.rdColor').css('color',accentColor);break;case 'toast':case 'align':case 'myID':case 'raidMode':case 'border':case 'edge':case 'meBold':case 'otherBold':case 'comma':changeCheckIcon(obj);break;case 'arrow':check=changeCheckIcon(obj);arrowHidden(localStorage.getItem("arrow"));break;case 'autoHide':changeCheckIcon(obj);initCheck(obj.id);break;
 //这里
+case 'showtime':
 case 'capture':
     var el=document.getElementById("zone");
 
