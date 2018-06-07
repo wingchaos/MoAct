@@ -105,11 +105,11 @@ $('.rdColor').css('color',accentColor);break;case 'toast':case 'align':case 'myI
 //这里
 case 'showtime':
      if(isShow==true){
-     $("#CuZone").hide(2500);
+     $(".CuZone").hide(2500);
      isShow=false;
     }
     else{
-        $("#CuZone").show(2500);
+        $(".CuZone").show(2500);
         isShow=true;
     }
     
